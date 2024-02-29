@@ -19,3 +19,14 @@
             }
             return true;
         }
+  
+* `将一个对象的value复制出来作为一个新的数组，并把他的key作为value数组里的id`
+* eg. 34543645-xxxx123213-xxxx:{MMValue:{x:1,y:2,z:3}}
+  
+      let arr  = Object.entries(oldArr).map(([key, value]) => {
+          const x = value.xxx == '1' ? "是" : "否";
+          const y = value.yyy == '1' ? "是" : "否";
+          const z = value.zzz;
+          return { ...value.xxx, ID: key, xx: x,yy:y ,zz:z};
+      });
+
