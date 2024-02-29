@@ -1,12 +1,11 @@
+//比较两个对象是否完全相同
+
 function deepEqual(obj1, obj2) {
     if (obj1 === obj2) {
         return true;
     }
 
     if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
-        Widget.fm_legacy_diago11bb4c.openPanel({
-            title: '元数据变更确认',
-        });
         return false;
     }
 
@@ -14,17 +13,11 @@ function deepEqual(obj1, obj2) {
     const keys2 = Object.keys(obj2);
 
     if (keys1.length !== keys2.length) {
-        Widget.fm_legacy_diago11bb4c.openPanel({
-            title: '元数据变更确认',
-        });
         return false;
     }
 
     for (let key of keys1) {
         if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
-            Widget.fm_legacy_diago11bb4c.openPanel({
-                title: '元数据变更确认',
-            });
             return false;
         }
     }
